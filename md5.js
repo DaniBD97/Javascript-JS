@@ -180,3 +180,18 @@ function unsigned32Add(){
 	}, 0);
 }
 
+//funcion
+const hola = 'Hola'
+const res = generateMD5Hash(hola)
+
+function generateMD5Hash(input) {
+    // Obtener el hash MD5 como ArrayBuffer
+    const hashBuffer = md5(input);
+
+    // Convertir el ArrayBuffer a string hexadecimal
+    const hashArray = Array.from(new Uint8Array(hashBuffer));
+    const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+
+    return hashHex;
+}
+
